@@ -5,11 +5,20 @@ import random
 
 
 def juego_nuevo(preguntas):
+    print("""Bienvenido a ¿Quién quiere ser millonario? versión Colombia
+    Si respondes bien, ganas y vas acumulando dinero
+    Si respondes mal o algo que no te piden
+    Sales del juego y pierdes el acumulado
+    En cualquier momento puedes retirarte y llevarte el acumulado
+    """)
     puntaje = 0
     for i in range(5):
-        k = (i*5) + random.randint(1,5)
+        # se usa libreria random para seleccionar un pregunta de cada categoria
+        # categoria 1 [0,4], categoria 2 [5,9], categoria 3 [10, 14], etc
+        k = (i*5) + random.randint(0,4)
         f = preguntas[k]
         print(f.mensaje)
+        # Se crea loop while asegurar que el participante de una respuesta si/no
         m = 0
         while m == 0:
             continuar = input("Deseas continuar y responder? (si o no): ")

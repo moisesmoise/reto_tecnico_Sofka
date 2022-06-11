@@ -1,5 +1,5 @@
 from Pregunta import Pregunta
-
+# listado de pregunta con opciones de respuesta, en orden
 mensaje_preguntas = [
 "¿Colombia tiene costas qué océano(s)?\nA. Atlántico y Pacífico\nB. Atlántico\nC. Atlántico y Caribe\nD. Índico\n",
 "¿Rio más grande que nace en Colombia?\nA. Nilo\nB. Magdalena\nC. Orinoco\nD. Amazonas\n",
@@ -27,7 +27,7 @@ mensaje_preguntas = [
 "¿Universidades públicas en Colombia?\nA. 42\nB. 24\nC. 28\nD. 32\n",
 "En Colombia, ¿Cuántos salarios mínimos gana un congresista?\nA. 34\nB. 24\nC. 48\nD. 30\n"
 ]
-
+#lista con objetos pregunta emparejando valores de pregunta y respuesta 
 preguntas = [
     Pregunta(mensaje_preguntas[0], "A"),
     Pregunta(mensaje_preguntas[1], "B"),
@@ -55,5 +55,5 @@ preguntas = [
     Pregunta(mensaje_preguntas[23], "D"),
     Pregunta(mensaje_preguntas[24], "A")
 ]
-
+# lista de premio por ronda en orden
 premios_rondas = (10000, 50000, 150000, 500000, 1000000)
