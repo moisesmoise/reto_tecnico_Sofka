@@ -3,7 +3,24 @@ from datos import premios_rondas
 from Pregunta import Pregunta
 import random
 
+class Premio:
+    def __init__(self, puntaje, participante):
+        self.puntaje = puntaje
+        self.participante = participante
 
+    def entregar_dinero(self):
+        suma = 0
+        for i in range(self.puntaje):
+            suma = suma + premios_rondas[i]
+        print (f"{self.participante} has ganado $ {suma}")
+
+# class Participante:
+#     def __init__(self):
+#         pass
+
+#     def solicitar_info(self):
+
+#Función del cuerpo del programa
 def juego_nuevo(preguntas):
     print("""Bienvenido a ¿Quién quiere ser millonario? versión Colombia
     Si respondes bien, ganas y vas acumulando dinero
@@ -44,19 +61,7 @@ def juego_nuevo(preguntas):
             break
     return puntaje
 
-def premios(ronda):
-    ganancia = 0
-    for i in range(ronda):
-        ganancia = ganancia + premios_rondas[i]
-    print (f"En total has ganado $ {ganancia}")
-    return ganancia    
-
-def datos_participante():
-    nombre = input("Cómo te llamas?: ")
-    return nombre
-
-gano = juego_nuevo(preguntas)
-dinero_final = premios(gano)
-datos = datos_participante()
-
-print(f"{datos} ganó $ {dinero_final}")
+# inicio del programa
+total = juego_nuevo(preguntas)
+ganancia = Premio(total, input("Cómo es su nombre?: "))
+ganancia.entregar_dinero()   
